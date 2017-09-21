@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src='js/jquery-3.2.0.min.js'></script>
+    <script type="text/javascript" src='bootstrap-3.3.7-dist/js/bootstrap.min.js'></script>
+    <script src="js/API.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+
+</head>
+<body>
+<h1 style="text-align: center">顾客界面</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <div class="tabbable" id="tabs-849991">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#panel-1" data-toggle="tab" onclick="getInfo()">获取个人信息</a>
+                    </li>
+                    <li>
+                        <a href="#panel-2" data-toggle="tab" onclick="getfreeRoom()">获取空房信息</a>
+                    </li>
+                    <li>
+                        <a href="#panel-3" data-toggle="tab" onclick="checkInInfo()">我的入住记录</a>
+                    </li>
+
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="panel-1">
+                        <div class="row">
+                            <div class="span12">
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>姓名</th>
+                                        <th>性别</th>
+                                        <th>是否有VIP</th>
+                                        <th>电话号码</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="personalContent">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="panel-2">
+                        <div class="row">
+                            <div class="span12">
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>房间号</th>
+                                        <th>房间状态</th>
+                                        <th>房间类型</th>
+                                        <th>房间价格</th>
+                                        <th>所需押金</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="roomContent">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <H2>选择您想要预定的房间</H2>
+                        <div class="form-group col-xs-2">
+                            <input type="text" class="form-control  input-lg" id="checkIn" placeholder="请输入房间号">
+                        </div>
+                        <button class="btn btn-primary btn-lg"  onclick="checkIn()">我选择入住该房间</button>
+                    </div>
+                    <div class="tab-pane" id="panel-3">
+                        <h2>正在入住：</h2>
+                        <div class="row">
+                            <div class="span12">
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>顾客编号</th>
+                                        <th>房间号</th>
+                                        <th>房间类型</th>
+                                        <th>房间价格</th>
+                                        <th>所需押金</th>
+                                        <th>入住时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="livingInfo">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <h2>历史入住记录：</h2>
+                        <div class="row">
+                            <div class="span12">
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>顾客编号</th>
+                                        <th>房间号</th>
+                                        <th>房间类型</th>
+                                        <th>房间价格</th>
+                                        <th>所需押金</th>
+                                        <th>入住时间</th>
+                                        <th>退房时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="historyInfo">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" id="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">输入您要更换的房间号</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="newRoom"  placeholder="请输入房间号">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">算了吧</button>
+                <button type="button" class="btn btn-primary" onclick="changeRoomBtn()">我要换房</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="js/client.js"></script>
+</body>
+</html>

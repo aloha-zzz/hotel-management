@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src='js/jquery-3.2.0.min.js'></script>
+    <script type="text/javascript" src='bootstrap-3.3.7-dist/js/bootstrap.min.js'></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/API.js"></script>
+</head>
+<body>
+<h1 style="text-align: center">员工界面</h1>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <div class="tabbable" id="tabs-849991">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#panel-1" data-toggle="tab" onclick="getInfo()">获取个人信息</a>
+                    </li>
+                    <li>
+                        <a href="#panel-2" data-toggle="tab" onclick="getRoom()">获取房间信息</a>
+                    </li>
+                    <li>
+                        <a href="#panel-3" data-toggle="tab" onclick="getCheckIn()">获取当前入住的信息</a>
+                    </li>
+
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="panel-1">
+                        <div class="row">
+                            <div class="span12">
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>姓名</th>
+                                        <th>薪水</th>
+                                        <th>性别</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="personalContent">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="panel-2">
+                        <div class="row">
+                            <div class="span12">
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>房间号</th>
+                                        <th>房间状态</th>
+                                        <th>房间类型</th>
+                                        <th>房间价格</th>
+                                        <th>所需押金</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="roomContent">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="panel-3">
+
+                        <div class="row">
+                            <div class="span12">
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>顾客编号</th>
+                                        <th>顾客名称</th>
+                                        <th>房间号</th>
+                                        <th>入住时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="content">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+<script src="js/employee.js"></script>
+</html>
