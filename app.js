@@ -21,9 +21,9 @@ var jsonParser = bodyParser.json();
 var pool=mysql.createPool({
     host:'localhost',
     port:3306,
-    database:'hotel_management',
+    database:'hotel-management',
     user:'root',
-    password:'1234',
+    password:'',
 
 })
 
@@ -48,6 +48,7 @@ app.post('/login',function (req,res) {
     pool.getConnection(function (err,poolconnect) {
         if(err){
             console.log('failed');
+            console.log(err);
         }else {
             console.log('connected');
             poolconnect.query(`select id,idtype from login where username=${resIn1} and password=${resIn2}`,function (err,result) {
@@ -385,6 +386,9 @@ app.get('/manager/getAllClientInfo',function (req,res) {
     })
 })
 
-app.listen(3000,'127.0.0.1',function () {
+// app.listen(3000,'127.0.0.1',function () {
+//     console.log('server is running')
+// });
+app.listen(3000,'0.0.0.0',function () {
     console.log('server is running')
 });
