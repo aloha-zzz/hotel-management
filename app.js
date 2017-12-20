@@ -389,9 +389,9 @@ app.get('/manager/getAllClientInfo',function (req,res) {
     })
 })
 
-app.listen(3000,'127.0.0.1',function () {
-    console.log('server is running')
-});
-// app.listen(3000,'0.0.0.0',function () {
+// app.listen(3000,'127.0.0.1',function () {
 //     console.log('server is running')
 // });
+app.listen(3000,'0.0.0.0',function () {
+    console.log('server is running')
+});
