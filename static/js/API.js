@@ -1,4 +1,5 @@
-var prefix='http://localhost:3000';
+var prefix=/*'http://localhost:3000'*/
+'';
 
 var API={
     login:`${prefix}/login`,
