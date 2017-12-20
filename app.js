@@ -2,9 +2,11 @@ var http=require('http');
 var express=require('express');
 var fs=require('fs');
 var app=express();
+const path = require('path');
 var mysql=require('mysql');
 var bodyParser = require('body-parser');
 
+app.use(express.static(path.join(__dirname, 'static')))
 
 app.use(bodyParser());
 // parse various different custom JSON types as JSON
@@ -28,9 +30,9 @@ var pool=mysql.createPool({
 })
 
 
-// app.get('/',function (req,res) {
-//     res.sendFile(__dirname+'/index.html');
-// })
+app.get('/',function (req,res) {
+    res.sendFile(__dirname+'/index.html');
+})
 
 app.get('/test',function (req,res) {
     res.setHeader('Content-Type','application/json');
@@ -387,9 +389,9 @@ app.get('/manager/getAllClientInfo',function (req,res) {
     })
 })
 
-// app.listen(3000,'127.0.0.1',function () {
-//     console.log('server is running')
-// });
-app.listen(3000,'0.0.0.0',function () {
+app.listen(3000,'127.0.0.1',function () {
     console.log('server is running')
 });
+// app.listen(3000,'0.0.0.0',function () {
+//     console.log('server is running')
+// });
