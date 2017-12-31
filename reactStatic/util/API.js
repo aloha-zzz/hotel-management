@@ -1,5 +1,6 @@
 
 const prefix='http://localhost:3000'
+
 const API={
     
     login:`${prefix}/login`,
@@ -23,3 +24,4 @@ const API={
     changeSalary:`${prefix}/manager/changeSalary`,
     getAllClientInfo:`${prefix}/manager/getAllClientInfo`,
 }
+export default  API;

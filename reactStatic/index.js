@@ -1,27 +1,23 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {BrowserRouter,Route} from 'react-router-dom'
-function Test() {
-    return(
-        <h1>hello</h1>
-    )
-}
+import Login from './components/login'
+import Client from './components/client';
+import Manager from './components/manager';
+import Employee from './components/employee';
 
-function Login() {
-    return(
-        <h1>loginz</h1>
-    )
-}
+
 
 ReactDom.render(
     <BrowserRouter>
         <div>
-            <Route path='/test' component={Test} />
+            <Route path='/client/:id' component={Client} />
+            <Route path='/manager/:id' component={Manager} />
+            <Route path='/employee/:id' component={Employee} />
             <Route exact path='/' component={Login} />
         </div>
     </BrowserRouter>,
     document.getElementById('root')
-
 )
 
 

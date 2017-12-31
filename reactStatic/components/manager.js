@@ -1,7 +1,7 @@
 import React from 'react';
 import Ajax from './../util/Ajax';
 
-class Client extends React.Component{
+class Manager extends React.Component{
     constructor(props){
         super(props);
     }
@@ -11,14 +11,17 @@ class Client extends React.Component{
     render(){
         return(
             <div>
-                <h1>Client</h1>
+                <h1>Manager</h1>
                 <ul>
                     <li>获取个人信息</li>
-                    <li>获取空房信息</li>
-                    <li>我的入住记录</li>
+                    <li>获取房间信息</li>
+                    <li>获取员工信息</li>
+                    <li>修改员工薪水</li>
+                    <li>获取所有入住信息</li>
                 </ul>
             </div>
         )
     }
 }
-export default Client
+
+export default Manager;
