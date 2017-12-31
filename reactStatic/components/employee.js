@@ -1,5 +1,5 @@
 import React from 'react';
-import Ajax from './../util/Ajax';
+import {Ajax} from './../util/Ajax';
 
 class Employee extends React.Component{
     constructor(props){

@@ -16,10 +16,16 @@ class Ajax{
         }).then(data=>{success(data)})
             .catch(data=>{error(data)})
     }
+}
 
-
-
-
+class ClientAjax{
 
 }
-export default Ajax
+class EmployeeAjax{
+
+}
+class ManagerAjax{
+
+}
+
+export  {Ajax,ClientAjax,EmployeeAjax,ManagerAjax};
