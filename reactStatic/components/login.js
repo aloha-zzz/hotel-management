@@ -1,5 +1,5 @@
 import React from 'react';
-import {Ajax} from './../util/Ajax';
+import Ajax from './../util/Ajax';
 import {withRouter} from 'react-router-dom';
 
 class Login extends React.Component{

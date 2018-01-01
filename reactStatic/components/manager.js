@@ -1,5 +1,5 @@
 import React from 'react';
-import {Ajax} from './../util/Ajax';
+import Ajax from './../util/Ajax';
 
 class Manager extends React.Component{
     constructor(props){
