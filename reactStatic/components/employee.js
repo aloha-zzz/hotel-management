@@ -98,8 +98,20 @@ class RoomInfo extends React.Component{
 class CheckIn extends React.Component{
     constructor(props){
         super(props)
+        this.state={
+            content:[]
+        }
+    }
+    componentDidMount(){
+        Ajax.Employee.getCheckIn(data=>{
+            console.log(data)
+            this.setState({
+                content:data.data.data
+            })
+        },error=>{console.log(error)})
     }
     render(){
+        console.log(this.state.content)
         return(
             <table>
                 <thead>
@@ -111,9 +123,14 @@ class CheckIn extends React.Component{
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>获取当前入住的信息</td>
-                    </tr>
+
+                {this.state.content.map((item,index)=>(<tr key={index}>
+                        <td>{item.c_id}</td>
+                        <td>{item.name}</td>
+                        <td>{item.room}</td>
+                        <td>{item.inTime}</td>
+                    </tr>))
+                }
                 </tbody>
             </table>
         )

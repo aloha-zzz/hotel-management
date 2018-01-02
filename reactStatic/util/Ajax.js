@@ -33,7 +33,22 @@ const Ajax={
             }).then(data=>{success(data)})
                 .catch(data=>{error(data)})
         },
-
+        getLivingInfo(data,success,error){
+            axios({
+                method:'post',
+                url:API.checkInInfo,
+                data,
+            }).then(data=>{success(data)})
+                .catch(data=>{error(data)})
+        },
+        getHistoryInfo(data,success,error){
+            axios({
+                method:'post',
+                url:API.historyInfo,
+                data,
+            }).then(data=>{success(data)})
+                .catch(data=>{error(data)})
+        }
     },
     Employee:{
         getInfo(data,success,error){

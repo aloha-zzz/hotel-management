@@ -80,6 +80,7 @@ app.post('/client/getInfo',function (req,res) {
             poolconnect.query(`select * from client where c_id=${userId}`,function (err,result) {
                 if(err){
                     res.send({status:300});
+                    console.log(err)
                 }else {
                     res.send({status:200,data:result});
                 }
