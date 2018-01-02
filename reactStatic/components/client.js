@@ -101,9 +101,19 @@ class FreeRoomInfo extends React.Component{
 class LiveRecord extends React.Component{
     constructor(props){
         super(props)
+        this.state={
+            livingInfo:[],
+            historyInfo:[]
+        }
     }
     componentDidMount(){
-        Ajax.Client
+        let userId=this.props.match.params.id;
+        Ajax.Client.getLivingInfo({userId},data=>{
+            console.log(data)
+        },err=>{console.log(err)})
+        Ajax.Client.getHistoryInfo({userId},data=>{
+            console.log(data)
+        },err=>{console.log(err)})
     }
 
     render(){
